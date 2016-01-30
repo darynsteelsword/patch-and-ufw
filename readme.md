@@ -6,9 +6,10 @@ This is the readme for using the Ansible code in this repo, said codes design en
 requirements
 ------------
 
+## On the local system
 * On the local system which will initialise the configuration of the remote Ubuntu system:
-* Ensure git and ansible are installed.
-    * As root, run the commands:
+  * Ensure git and ansible are installed.
+  * As root, run the commands:
 
 ```
 useradd -m ansuser
@@ -18,8 +19,9 @@ ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
 cat ~/.ssh/id_rsa.pub 		# copy the contents of this file, ready for the next steps)
 ```
 
+## On the remote system
 * On the remote system, ie the Ubuntu box to be configured:
-* As root, run the commands:
+  * As root, run the commands:
 
 ```
 apt-get install openssh-server && service sshd status
@@ -28,7 +30,6 @@ su ansuser -
 cd ~ && mkdir .ssh && chmod 700 .ssh
 vi ~/.ssh/authorized_keys		# copy in the contents of id_rsa.pub from the local system
 ```
-
 
 * In /opt, as root, run the commands:
 
