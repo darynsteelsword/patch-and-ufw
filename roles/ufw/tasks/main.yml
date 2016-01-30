@@ -1,2 +1,5 @@
 ---
-# tasks file for ufw
+# tasks file for patching
+
+- include: ufw-install.yml
+- include: ufw-conf-enable.yml
