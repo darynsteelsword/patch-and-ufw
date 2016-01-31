@@ -1,7 +1,7 @@
 Tech Test for TP Readme
 =================
 
-This is the readme for using the Ansible code in this repo, said codes design enabling the patching and the enabling of UFW on a remote Ubuntu box.
+This is the readme for using the Ansible code in this repo, the design of said code enabling the patching, installation, configuration/enabling of UFW and rebooting of a remote Ubuntu box.
 
 requirements
 ------------
@@ -16,7 +16,7 @@ useradd -m ansuser
 su ansuser -
 cd ~ && mkdir .ssh && chmod 700 .ssh
 ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
-cat ~/.ssh/id_rsa.pub 		# copy the contents of this file, ready for the next steps)
+cat ~/.ssh/id_rsa.pub 		# copy the contents of this file, ready for the next steps
 ```
 
 #### On the remote system
@@ -29,6 +29,7 @@ useradd -m ansuser
 su ansuser -
 cd ~ && mkdir .ssh && chmod 700 .ssh
 vi ~/.ssh/authorized_keys		# copy in the contents of id_rsa.pub from the local system
+                                        # could've used ssh-copy for this but allowing root ssh on a box is unpleasant
 ```
 
 #### On the local system
