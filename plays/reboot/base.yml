@@ -1,0 +1,6 @@
+---
+- hosts: all
+  sudo: yes
+
+  roles:
+    - { role: reboot, tags: [ 'reboot' ] }

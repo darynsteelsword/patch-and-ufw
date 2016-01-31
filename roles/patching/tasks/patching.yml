@@ -1,0 +1,7 @@
+- name: Update all packages on Debian/Ubuntu
+  apt: upgrade=dist
+  when: ansible_os_family == "Debian"
+
+- name: Update all packages on Redhat/Centos
+  yum: name=* state=latest
+  when: ansible_os_family == "Redhat"

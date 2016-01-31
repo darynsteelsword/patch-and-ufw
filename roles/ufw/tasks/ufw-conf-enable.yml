@@ -1,0 +1,20 @@
+# NOTE - default policy here is to allow all traffic, needs to be changed for live operation!
+- name: Enable UFW
+  ufw: state=enabled policy=allow
+
+- name: Enable UFW traffic logging
+  ufw: logging=on
+
+
+# Note - if default policy of UFW is to allow, the below rules are redundant until policy is changed to deny
+- name: Allow all local traffic through to this box
+  ufw: rule=allow src={{ item }}
+  with_items:
+  - 10.0.0.0/8
+  - 172.16.0.0/12
+  - 192.168.0.0/16
+
+- name: Allow SSH traffic
+  ufw: rule=deny name=OpenSSH
+
+
