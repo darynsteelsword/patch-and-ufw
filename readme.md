@@ -37,10 +37,10 @@ vi ~/.ssh/authorized_keys		# copy in the contents of id_rsa.pub from the local s
 
 ```
 git clone https://github.com/techtesttp/patch-and-ufw.git
-chown -R ansuser:ansuser patch-and-ufw.git
+chown -R ansuser:ansuser patch-and-ufw
 su ansuser -
-cd /opt/patch-and-ufw
-nano inventory/ubuntuservers # (use editor of choice here)
+cd /opt/patch-and-ufw/
+nano inventory/ubuntuservers # (use editor of choice here, vi, nano etc)
 ```
 
 * In the inventory/ubuntuservers file, replace 192.168.0.17 with the IP address or DNS name of the Ubuntu server to be patched and configured, then save and close.
