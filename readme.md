@@ -6,7 +6,7 @@ This is the readme for using the Ansible code in this repo, said codes design en
 requirements
 ------------
 
-## On the local system
+#### On the local system
 * On the local system which will initialise the configuration of the remote Ubuntu system:
   * Ensure git and ansible are installed.
   * As root, run the commands:
@@ -19,7 +19,7 @@ ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
 cat ~/.ssh/id_rsa.pub 		# copy the contents of this file, ready for the next steps)
 ```
 
-## On the remote system
+#### On the remote system
 * On the remote system, ie the Ubuntu box to be configured:
   * As root, run the commands:
 
