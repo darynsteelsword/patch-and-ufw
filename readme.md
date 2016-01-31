@@ -3,12 +3,15 @@ Tech Test for TP Readme
 
 This is the readme for using the Ansible code in this repo, the design of said code enabling the patching, installation, configuration/enabling of UFW and rebooting of a remote Ubuntu box.
 
-requirements
+Requirements
 ------------
 
 #### On the local system
 * On the local system which will initialise the configuration of the remote Ubuntu system:
-  * Ensure git and ansible are installed.
+  * Ensure git and ansible are installed, ie:
+```
+apt-get install git ansible  # Assuming local system is a Debian family box
+```
   * As root, run the commands:
 
 ```
@@ -20,7 +23,7 @@ cat ~/.ssh/id_rsa.pub 		# copy the contents of this file, ready for the next ste
 ```
 
 #### On the remote system
-* On the remote system, ie the Ubuntu box to be configured:
+* On the remote system, ie the Ubuntu box to be managed:
   * As root, run the commands:
 
 ```
@@ -29,7 +32,7 @@ useradd -m ansuser
 su ansuser -
 cd ~ && mkdir .ssh && chmod 700 .ssh
 vi ~/.ssh/authorized_keys		# copy in the contents of id_rsa.pub from the local system
-                                        # could've used ssh-copy for this but allowing root ssh on a box is unpleasant
+                                    # could've used ssh-copy for this but allowing root ssh on a box is unpleasant
 ```
 
 #### On the local system
